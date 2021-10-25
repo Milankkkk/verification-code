@@ -5,11 +5,10 @@ $(function () {
         var id = Number(e.currentTarget.dataset.index) 
         var val = $(this).val()
         switch (id){
-            case id: if (val.length > 0) {
+            case id: if (val.length == 1) {
                         if(id<3){
                             $("#yzm"+id).attr('disabled', 'disabled').addClass('text-align')
                             $("#yzm"+(id+1)).removeAttr('disabled').focus()
-                            console.log()
                         }else{
                             $("#yzm3").attr('disabled', 'disabled').addClass('text-align')
                             let t = setTimeout(function(){
