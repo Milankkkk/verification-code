@@ -45,6 +45,14 @@ $(function () {
         }
     })
 
+    $(".yzm-mask .input-box").click(function(){
+        for(var i=0;i<4;i++){
+            if(!$("#yzm"+i).attr('disabled')){
+                 $("#yzm"+i).focus()
+            }
+        }
+    })
+
 
     // 60秒倒计时
     function interval(){
