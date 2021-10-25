@@ -186,3 +186,10 @@
     50% { transform: rotate(-140deg) }
     100% { transform: rotate(0) }
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+}
+input[type="number"] {
+-moz-appearance: textfield;
+}
