@@ -1,5 +1,5 @@
 $(function () {
-
+    var value = $("#yzm0").val()
     //监听input输入事件
     $(".yzm-mask .input-box input").on('input', function (e) {
         var id = Number(e.currentTarget.dataset.index) 
@@ -26,7 +26,6 @@ $(function () {
                             },100)
                         }
                     }else if(val.length>1){
-                        var value = $("#yzm0").val()
                         $("#yzm0").val(value.slice(0,1))
                         $("#yzm1").val(value.slice(1,2))
                         $("#yzm2").val(value.slice(2,3))
