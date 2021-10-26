@@ -4,7 +4,8 @@ $(function () {
     $(".yzm-mask .input-box input").on('input', function (e) {
         var id = Number(e.currentTarget.dataset.index) 
         var val = $(this).val()
-        console.log(val)
+        console.log($("#yzm0").val())
+        alert($("#yzm0").val() + '  ' + $("#yzm1").val() +'  '+$("#yzm2").val()+'  '+$("#yzm3").val())
         // switch (id){
         //     case id: if (val.length == 1) {
         //                 if(id<3){
