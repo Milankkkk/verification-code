@@ -1,7 +1,7 @@
 $(function () {
     // var code = '1234'
     // $("#yzm0").val(code)
-    alert(7777)
+    alert(88)
 
     var data = null;
     $(document.body).bind({
@@ -19,7 +19,6 @@ $(function () {
     // 监听input获取焦点
     $('#yzm0').focus(function () {
         var val = $(this).val()
-        alert(data)
         if (val.length == 4 ) {
             $("#yzm0").val(data.slice(0, 1)).attr('disabled', 'disabled').addClass('text-align')
             $("#yzm1").val(data.slice(1, 2)).addClass('text-align')
