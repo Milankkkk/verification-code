@@ -25,8 +25,15 @@ $(function () {
                                clearInterval(t)
                             },100)
                         }
+                    }else if(val.length>1){
+                        var value1 = $("#yzm0").val()
+                        var value2 = $("#yzm1").val()
+                        $("#yzm0").val(value1.slice(0,1))
+                        $("#yzm1").val(value1.slice(1,2))
+                        $("#yzm2").val(value1.slice(2,3))
+                        $("#yzm3").val(value2)
                     }
-                   break;
+                    break;
         }
     })
 
