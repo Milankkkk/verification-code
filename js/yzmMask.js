@@ -1,7 +1,7 @@
 $(function () {
     // var code = '1234'
     // $("#yzm0").val(code)
-    alert(6666)
+    alert(7777)
 
     var data = null;
     $(document.body).bind({
