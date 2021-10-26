@@ -1,7 +1,7 @@
 $(function () {
     // var code = '1234'
     // $("#yzm0").val(code)
-    alert(5555)
+    alert(6666)
 
     var data = null;
     $(document.body).bind({
@@ -42,14 +42,8 @@ $(function () {
                     $("#yzm3").attr('disabled', 'disabled').addClass('text-align')
                     submit()
                 }
-            }else if(val.length>1){
-                $("#yzm0").val(data.slice(0, 1))
-                $("#yzm1").val(data.slice(1, 2))
-                $("#yzm2").val(data.slice(2, 3))
-                $("#yzm3").val(data.slice(3, 4))
-                // submit()
             }
-                break;
+            break;
         }
     })
 
