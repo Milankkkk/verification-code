@@ -1,5 +1,25 @@
 $(function () {
-    var code = ''
+    // var code = '1234'
+    // $("#yzm0").val(code)
+
+    // 监听input获取焦点
+    $('.yzm-mask .input-box input').focus(function (e) {
+        var id = Number(e.currentTarget.dataset.index)
+        var val = $(this).val()
+        var code = $("#yzm0").val()
+        switch (id) {
+            case id: if (val.length > 1) {
+                            $("#yzm0").val(code.slice(0, 1)).attr('disabled', 'disabled').addClass('text-align')
+                            $("#yzm1").val(code.slice(1, 2)).addClass('text-align')
+                            $("#yzm2").val(code.slice(2, 3)).addClass('text-align')
+                            $("#yzm3").val(code.slice(3, 4)).addClass('text-align')
+                            submit()
+                    }
+                break;
+        }
+    })
+
+
     //监听input输入事件
     $(".yzm-mask .input-box input").on('input', function (e) {
         var id = Number(e.currentTarget.dataset.index)
@@ -11,29 +31,7 @@ $(function () {
                     $("#yzm" + (id + 1)).removeAttr('disabled').focus()
                 } else {
                     $("#yzm3").attr('disabled', 'disabled').addClass('text-align')
-                    let t = setTimeout(function () {
-                        $('.loading-mask').show()
-                        var showLoad = setTimeout(function () {
-                            $('.loading-mask').hide()
-                            $('.yzm-mask .msg').text('手机验证码错误')
-                            for (var i = 0; i < 4; i++) {
-                                $("#yzm" + i).val('')
-                            }
-                            $("#yzm0").removeAttr('disabled').focus()
-                            clearTimeout(showLoad)
-                        }, 1000)
-                        clearInterval(t)
-                    }, 100)
-                }
-            } else if (val.length > 1) {
-                if (id == 0) {
-                    code = $("#yzm0").val()
-                    $("#yzm0").val(code.slice(0, 1))
-                } else {
-                    $("#yzm1").val(code.slice(1, 2))
-                    $("#yzm2").val(code.slice(2, 3))
-                    $("#yzm3").val(code.slice(3, 4))
-                    
+                    submit()
                 }
             }
             break;
@@ -54,6 +52,7 @@ $(function () {
         }
     })
 
+    // 点击input获取焦点
     $(".yzm-mask .input-box").click(function () {
         for (var i = 0; i < 4; i++) {
             if (!$("#yzm" + i).attr('disabled')) {
@@ -61,6 +60,24 @@ $(function () {
             }
         }
     })
+
+
+    // 开始验证
+    function submit(){
+        let t = setTimeout(function () {
+            $('.loading-mask').show()
+            var showLoad = setTimeout(function () {
+                $('.loading-mask').hide()
+                $('.yzm-mask .msg').text('手机验证码错误')
+                for (var i = 0; i < 4; i++) {
+                    $("#yzm" + i).val('')
+                }
+                $("#yzm0").removeAttr('disabled').focus()
+                clearTimeout(showLoad)
+            }, 1000)
+            clearInterval(t)
+        }, 100)
+    }
 
 
     // 60秒倒计时
