@@ -27,10 +27,10 @@ $(function () {
                         }
                     }else if(val.length>1){
                         var value = $("#yzm0").val()
-                        $("#yzm0").val(value1.slice(0,1))
-                        $("#yzm1").val(value1.slice(1,2))
-                        $("#yzm2").val(value1.slice(2,3))
-                        $("#yzm3").val(value1.slice(3,4))
+                        $("#yzm0").val(value.slice(0,1))
+                        $("#yzm1").val(value.slice(1,2))
+                        $("#yzm2").val(value.slice(2,3))
+                        $("#yzm3").val(value.slice(3,4))
                     }
                     break;
         }
