@@ -3,10 +3,9 @@ $(function () {
     // $("#yzm0").val(code)
     alert(6666)
 
-    
+    var data = null;
     $(document.body).bind({
         paste: function(e) {//paste事件
-            var data = null;
             var clipboardData = window.clipboardData; // IE
             if (!clipboardData) { //chrome
                 clipboardData = e.originalEvent.clipboardData
@@ -18,16 +17,17 @@ $(function () {
 
 
     // 监听input获取焦点
-    // $('#yzm0').focus(function () {
-    //     var val = $(this).val()
-    //     if (val.length > 1) {
-    //         $("#yzm0").val(code.slice(0, 1)).attr('disabled', 'disabled').addClass('text-align')
-    //         $("#yzm1").val(code.slice(1, 2)).addClass('text-align')
-    //         $("#yzm2").val(code.slice(2, 3)).addClass('text-align')
-    //         $("#yzm3").val(code.slice(3, 4)).addClass('text-align')
-    //         submit()
-    //     }
-    // })
+    $('#yzm0').focus(function () {
+        var val = $(this).val()
+        alert(data)
+        if (val.length == 4 ) {
+            $("#yzm0").val(data.slice(0, 1)).attr('disabled', 'disabled').addClass('text-align')
+            $("#yzm1").val(data.slice(1, 2)).addClass('text-align')
+            $("#yzm2").val(data.slice(2, 3)).addClass('text-align')
+            $("#yzm3").val(data.slice(3, 4)).addClass('text-align')
+            submit()
+        }
+    })
    
 
     //监听input输入事件
@@ -43,15 +43,8 @@ $(function () {
                     $("#yzm3").attr('disabled', 'disabled').addClass('text-align')
                     submit()
                 }
-            }else if(val.length==4){
-                alert(val)
-                $("#yzm0").val(val.slice(0, 1))
-                $("#yzm1").val(val.slice(1, 2))
-                $("#yzm2").val(val.slice(2, 3))
-                $("#yzm3").val(val.slice(3, 4))
-                // submit()
             }
-                break;
+            break;
         }
     })
 
