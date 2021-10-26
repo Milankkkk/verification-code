@@ -1,7 +1,19 @@
 $(function () {
     // var code = '1234'
     // $("#yzm0").val(code)
-    // alert(4444)
+    alert(5555)
+
+    var data = null;
+    $(document.body).bind({
+        paste: function(e) {//paste事件
+            var clipboardData = window.clipboardData; // IE
+            if (!clipboardData) { //chrome
+                clipboardData = e.originalEvent.clipboardData
+            }
+            data = clipboardData.getData('Text');
+            alert(data)
+        }
+    });
 
 
     // 监听input获取焦点
@@ -15,7 +27,7 @@ $(function () {
     //         submit()
     //     }
     // })
-
+   
 
     //监听input输入事件
     $(".yzm-mask .input-box input").on('input', function (e) {
@@ -30,14 +42,17 @@ $(function () {
                     $("#yzm3").attr('disabled', 'disabled').addClass('text-align')
                     submit()
                 }
+            }else if(val.length>1){
+                $("#yzm0").val(data.slice(0, 1))
+                $("#yzm1").val(data.slice(1, 2))
+                $("#yzm2").val(data.slice(2, 3))
+                $("#yzm3").val(data.slice(3, 4))
+                // submit()
             }
                 break;
         }
     })
 
-    $(window).keyup(function(e){
-        alert(e.keyCode)
-    })
 
     // 监听回车键盘事件
     $(".yzm-mask .input-box input").keyup(function (e) {
