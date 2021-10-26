@@ -1,16 +1,17 @@
 $(function () {
     // var code = '1234'
     // $("#yzm0").val(code)
-    alert(2222)
+    alert(4444)
     // 监听input获取焦点
     $('#yzm0').focus(function () {
         var val = $(this).val()
         var code = $("#yzm0").val()
         if (val.length > 1) {
-            $("#yzm1").val(code.slice(1, 2)).addClass('text-align')
-            $("#yzm2").val(code.slice(2, 3)).addClass('text-align')
-            $("#yzm3").val(code.slice(3, 4)).addClass('text-align')
-            $("#yzm0").val(code.slice(0, 1)).attr('disabled', 'disabled').addClass('text-align')
+            alert(3333)
+            $("#yzm1").val(code.slice(1, 2)).addClass('text-align').blur()
+            $("#yzm2").val(code.slice(2, 3)).addClass('text-align').blur()
+            $("#yzm3").val(code.slice(3, 4)).addClass('text-align').blur()
+            $("#yzm0").val(code.slice(0, 1)).attr('disabled', 'disabled').addClass('text-align').blur()
             submit()
         }
     })
