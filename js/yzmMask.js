@@ -1,7 +1,7 @@
 $(function () {
     // var code = '1234'
     // $("#yzm0").val(code)
-
+    alert(1111)
     // 监听input获取焦点
     $('.yzm-mask .input-box input').focus(function (e) {
         var id = Number(e.currentTarget.dataset.index)
