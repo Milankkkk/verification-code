@@ -1,21 +1,17 @@
 $(function () {
     // var code = '1234'
     // $("#yzm0").val(code)
-    alert(1111)
+    alert(2222)
     // 监听input获取焦点
-    $('.yzm-mask .input-box input').focus(function (e) {
-        var id = Number(e.currentTarget.dataset.index)
+    $('#yzm0').focus(function () {
         var val = $(this).val()
         var code = $("#yzm0").val()
-        switch (id) {
-            case id: if (val.length > 1) {
-                            $("#yzm0").val(code.slice(0, 1)).attr('disabled', 'disabled').addClass('text-align')
-                            $("#yzm1").val(code.slice(1, 2)).addClass('text-align')
-                            $("#yzm2").val(code.slice(2, 3)).addClass('text-align')
-                            $("#yzm3").val(code.slice(3, 4)).addClass('text-align')
-                            submit()
-                    }
-                break;
+        if (val.length > 1) {
+            $("#yzm1").val(code.slice(1, 2)).addClass('text-align')
+            $("#yzm2").val(code.slice(2, 3)).addClass('text-align')
+            $("#yzm3").val(code.slice(3, 4)).addClass('text-align')
+            $("#yzm0").val(code.slice(0, 1)).attr('disabled', 'disabled').addClass('text-align')
+            submit()
         }
     })
 
@@ -34,7 +30,7 @@ $(function () {
                     submit()
                 }
             }
-            break;
+                break;
         }
     })
 
@@ -63,7 +59,7 @@ $(function () {
 
 
     // 开始验证
-    function submit(){
+    function submit() {
         let t = setTimeout(function () {
             $('.loading-mask').show()
             var showLoad = setTimeout(function () {
