@@ -57,7 +57,7 @@ $(function () {
                 $('.loading-mask').hide()
                 $('.yzm-mask .msg').text('手机验证码错误')
                 for (var i = 0; i < 4; i++) {
-                    $("#yzm" + i).val('')
+                    $("#yzm" + i).val('').removeClass('text-align')
                 }
                 $("#yzm0").removeAttr('disabled').focus()
                 clearTimeout(showLoad)
