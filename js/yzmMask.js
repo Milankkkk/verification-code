@@ -4,37 +4,38 @@ $(function () {
     $(".yzm-mask .input-box input").on('input', function (e) {
         var id = Number(e.currentTarget.dataset.index) 
         var val = $(this).val()
-        switch (id){
-            case id: if (val.length == 1) {
-                        if(id<3){
-                            $("#yzm"+id).attr('disabled', 'disabled').addClass('text-align')
-                            $("#yzm"+(id+1)).removeAttr('disabled').focus()
-                        }else{
-                            $("#yzm3").attr('disabled', 'disabled').addClass('text-align')
-                            let t = setTimeout(function(){
-                                $('.loading-mask').show()
-                                var showLoad = setTimeout(function(){
-                                    $('.loading-mask').hide()
-                                    $('.yzm-mask .msg').text('手机验证码错误')
-                                    for(var i=0;i<4;i++){
-                                      $("#yzm"+i).val('')
-                                    }
-                                    $("#yzm0").removeAttr('disabled').focus()
-                                    clearTimeout(showLoad)
-                                },1000)
-                               clearInterval(t)
-                            },100)
-                        }
-                    }else if(val.length>1){
-                        var value1 = $("#yzm0").val()
-                        var value2 = $("#yzm1").val()
-                        $("#yzm0").val(value1.slice(0,1))
-                        $("#yzm1").val(value1.slice(1,2))
-                        $("#yzm2").val(value1.slice(2,3))
-                        $("#yzm3").val(value2)
-                    }
-                    break;
-        }
+        console.log(val)
+        // switch (id){
+        //     case id: if (val.length == 1) {
+        //                 if(id<3){
+        //                     $("#yzm"+id).attr('disabled', 'disabled').addClass('text-align')
+        //                     $("#yzm"+(id+1)).removeAttr('disabled').focus()
+        //                 }else{
+        //                     $("#yzm3").attr('disabled', 'disabled').addClass('text-align')
+        //                     let t = setTimeout(function(){
+        //                         $('.loading-mask').show()
+        //                         var showLoad = setTimeout(function(){
+        //                             $('.loading-mask').hide()
+        //                             $('.yzm-mask .msg').text('手机验证码错误')
+        //                             for(var i=0;i<4;i++){
+        //                               $("#yzm"+i).val('')
+        //                             }
+        //                             $("#yzm0").removeAttr('disabled').focus()
+        //                             clearTimeout(showLoad)
+        //                         },1000)
+        //                        clearInterval(t)
+        //                     },100)
+        //                 }
+        //             }else if(val.length>1){
+        //                 var value1 = $("#yzm0").val()
+        //                 var value2 = $("#yzm1").val()
+        //                 $("#yzm0").val(value1.slice(0,1))
+        //                 $("#yzm1").val(value1.slice(1,2))
+        //                 $("#yzm2").val(value1.slice(2,3))
+        //                 $("#yzm3").val(value2)
+        //             }
+        //             break;
+        // }
     })
 
     // 监听回车键盘事件
