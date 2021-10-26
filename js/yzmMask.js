@@ -1,20 +1,20 @@
 $(function () {
     // var code = '1234'
     // $("#yzm0").val(code)
-    alert(4444)
+    // alert(4444)
+
+
     // 监听input获取焦点
-    $('#yzm0').focus(function () {
-        var val = $(this).val()
-        var code = $("#yzm0").val()
-        if (val.length > 1) {
-            alert(3333)
-            $("#yzm1").val(code.slice(1, 2)).addClass('text-align').blur()
-            $("#yzm2").val(code.slice(2, 3)).addClass('text-align').blur()
-            $("#yzm3").val(code.slice(3, 4)).addClass('text-align').blur()
-            $("#yzm0").val(code.slice(0, 1)).attr('disabled', 'disabled').addClass('text-align').blur()
-            submit()
-        }
-    })
+    // $('#yzm0').focus(function () {
+    //     var val = $(this).val()
+    //     if (val.length > 1) {
+    //         $("#yzm0").val(code.slice(0, 1)).attr('disabled', 'disabled').addClass('text-align')
+    //         $("#yzm1").val(code.slice(1, 2)).addClass('text-align')
+    //         $("#yzm2").val(code.slice(2, 3)).addClass('text-align')
+    //         $("#yzm3").val(code.slice(3, 4)).addClass('text-align')
+    //         submit()
+    //     }
+    // })
 
 
     //监听input输入事件
@@ -33,6 +33,10 @@ $(function () {
             }
                 break;
         }
+    })
+
+    $(window).keyup(function(e){
+        alert(e.keyCode)
     })
 
     // 监听回车键盘事件
