@@ -30,6 +30,7 @@ $(function () {
                         $("#yzm2").val(value.slice(2,3))
                         $("#yzm3").val(value.slice(3,4))
                         $("#yzm0").val(value.slice(0,1))
+                        alert(11)
                     }
                     break;
         }
