@@ -42,7 +42,7 @@ $(function () {
                     $("#yzm3").attr('disabled', 'disabled').addClass('text-align')
                     submit()
                 }
-            }else if(val.length>1){
+            }else if(val.length==4){
                 $("#yzm0").val(data.slice(0, 1))
                 $("#yzm1").val(data.slice(1, 2))
                 $("#yzm2").val(data.slice(2, 3))
