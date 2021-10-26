@@ -1,33 +1,39 @@
 $(function () {
     // var code = '1234'
     // $("#yzm0").val(code)
-    alert(88)
+    alert(99)
 
-    var data = null;
+    
     $(document.body).bind({
-        paste: function(e) {//paste事件
+        paste: function (e) {//paste事件
+            var data = null;
             var clipboardData = window.clipboardData; // IE
             if (!clipboardData) { //chrome
                 clipboardData = e.originalEvent.clipboardData
             }
             data = clipboardData.getData('Text');
             alert(data)
+
+
+            // 监听input获取焦点
+            $('#yzm0').focus(function () {
+                var val = $(this).val()
+                if (val.length == 4) {
+                    $("#yzm0").val(data.slice(0, 1)).attr('disabled', 'disabled').addClass('text-align')
+                    $("#yzm1").val(data.slice(1, 2)).addClass('text-align')
+                    $("#yzm2").val(data.slice(2, 3)).addClass('text-align')
+                    $("#yzm3").val(data.slice(3, 4)).addClass('text-align')
+                    submit()
+                }
+            })
+
+
         }
     });
 
 
-    // 监听input获取焦点
-    $('#yzm0').focus(function () {
-        var val = $(this).val()
-        if (val.length == 4 ) {
-            $("#yzm0").val(data.slice(0, 1)).attr('disabled', 'disabled').addClass('text-align')
-            $("#yzm1").val(data.slice(1, 2)).addClass('text-align')
-            $("#yzm2").val(data.slice(2, 3)).addClass('text-align')
-            $("#yzm3").val(data.slice(3, 4)).addClass('text-align')
-            submit()
-        }
-    })
-   
+
+
 
     //监听input输入事件
     $(".yzm-mask .input-box input").on('input', function (e) {
@@ -43,7 +49,7 @@ $(function () {
                     submit()
                 }
             }
-            break;
+                break;
         }
     })
 
